@@ -12,7 +12,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
-require('dotenv').config()
+require('dotenv').config();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended:true}));
@@ -31,7 +31,7 @@ main().then((res) => {
 }).catch((err)=>{
     console.log(err);
 });
-
+console.log(MONGO_URL)
 async function main() {
     await mongoose.connect(MONGO_URL);
 }
